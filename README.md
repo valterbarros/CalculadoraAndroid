@@ -1,2 +1,3 @@
 # CalculadoraAndroid
-teste
+#Testando o merge entre o servidor e working directory.
+
