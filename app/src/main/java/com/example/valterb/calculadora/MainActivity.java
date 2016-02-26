@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity {
         EditText n1 = (EditText) findViewById(R.id.n1);
         int N1num = Integer.parseInt(n1.getText().toString());
         EditText n2 = (EditText) findViewById(R.id.n2);
-        int N2num = Integer.parseInt(n1.getText().toString());
+        int N2num = Integer.parseInt(n2.getText().toString());
         Result = N1num + N2num;
         Toast.makeText(this, "Resultado: " + Result, Toast.LENGTH_LONG).show();
     }
@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
         EditText n1 = (EditText) findViewById(R.id.n1);
         int N1num = Integer.parseInt(n1.getText().toString());
         EditText n2 = (EditText) findViewById(R.id.n2);
-        int N2num = Integer.parseInt(n1.getText().toString());
+        int N2num = Integer.parseInt(n2.getText().toString());
         Result = N1num - N2num;
         Toast.makeText(this, "Resultado: " + Result, Toast.LENGTH_LONG).show();
     }
@@ -37,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
         EditText n1 = (EditText) findViewById(R.id.n1);
         int N1num = Integer.parseInt(n1.getText().toString());
         EditText n2 = (EditText) findViewById(R.id.n2);
-        int N2num = Integer.parseInt(n1.getText().toString());
+        int N2num = Integer.parseInt(n2.getText().toString());
         Result = N1num / N2num;
         Toast.makeText(this, "Resultado: " + Result, Toast.LENGTH_LONG).show();
     }
@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
         EditText n1 = (EditText) findViewById(R.id.n1);
         int N1num = Integer.parseInt(n1.getText().toString());
         EditText n2 = (EditText) findViewById(R.id.n2);
-        int N2num = Integer.parseInt(n1.getText().toString());
+        int N2num = Integer.parseInt(n2.getText().toString());
         Result = N1num * N2num;
         Toast.makeText(this, "Resultado: " + Result, Toast.LENGTH_LONG).show();
     }
