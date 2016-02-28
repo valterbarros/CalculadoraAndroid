@@ -21,41 +21,49 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         edittext= (EditText) findViewById(R.id.edittext);
     }
-    
+
     public void calc(View view){
-        n1 = Integer.parseInt(edittext.getText().toString());
-        edittext.setText("");
-        op = view.getId();
+        try {
+            n1 = Integer.parseInt(edittext.getText().toString());
+            edittext.setText("");
+            op = view.getId();
+        }catch(Exception e){
+            Toast.makeText(this,"Vamos com calma ai! ", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void result(View view){
-        String erro = "";
-        n2 = Integer.parseInt(edittext.getText().toString());
+    public void result(View view) {
+        try {
+            String erro = "";
+            n2 = Integer.parseInt(edittext.getText().toString());
 
-        switch(op){
-            case R.id.sum:
-                Result = n1 + n2;
-                edittext.setText(String.valueOf(Result));
-                break;
-            case R.id.sub:
-                Result = n1 - n2;
-                edittext.setText(String.valueOf(Result));
-                break;
-            case R.id.div:
-                try {
-                    Result = n1 / n2;
+            switch (op) {
+                case R.id.sum:
+                    Result = n1 + n2;
                     edittext.setText(String.valueOf(Result));
-                }catch(Exception e){
-                    erro = "Cannot Divide!";
-                    edittext.setText(erro);
-                }
-                break;
-            case R.id.mult:
-                Result = n1 * n2;
-                edittext.setText(String.valueOf(Result));
-                break;
-        }
+                    break;
+                case R.id.sub:
+                    Result = n1 - n2;
+                    edittext.setText(String.valueOf(Result));
+                    break;
+                case R.id.div:
+                    try {
+                        Result = n1 / n2;
+                        edittext.setText(String.valueOf(Result));
+                    } catch (Exception e) {
+                        erro = "Cannot Divide!";
+                        edittext.setText(erro);
+                    }
+                    break;
+                case R.id.mult:
+                    Result = n1 * n2;
+                    edittext.setText(String.valueOf(Result));
+                    break;
+            }
 
+        }catch(Exception e){
+            Toast.makeText(this,"Vamos com calma ai! ", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void cc(View view) {
