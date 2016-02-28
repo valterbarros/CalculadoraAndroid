@@ -1,61 +1,72 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@drawable/datevaderflat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
         android:scaleType="centerCrop"
-        android:width="10dp"/>
-    <EditText
-        android:id="@+id/n1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/n2"
-        android:layout_alignEnd="@+id/n2" />
-    <EditText
-        android:id="@+id/n2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_below="@id/n1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <Button
-        android:id="@+id/sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/n2"
-        android:text="+"
-        android:onClick="sum"/>
-    <Button
-        android:id="@+id/sub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sum"
-        android:text="-"
-        android:onClick="sub"/>
-    <Button
-        android:id="@+id/div"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sub"
-        android:text="/"
-        android:onClick="div"/>
-    <Button
-        android:id="@+id/mult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/div"
-        android:text="*"
-        android:onClick="mult"/>
+        />
 
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
+    <LinearLayout
+        android:id="@+id/view_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittext"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="calc"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/sum"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="calc"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/div"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="calc"
+            android:text="/" />
+
+        <Button
+            android:id="@+id/mult"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="calc"
+            android:text="*" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="190dp"
+        android:layout_below="@+id/edittext"
+        android:layout_toEndOf="@+id/view_linear"
+        android:layout_toRightOf="@+id/view_linear"
+        android:onClick="result"
+        android:text="=" />
+
+    <Button
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:text="CC"
+        android:layout_below="@id/view_linear"
+        android:onClick="cc"
+        />
 </RelativeLayout>

@@ -6,49 +6,59 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
     int Result = 0;
+    int n1 = 0;
+    int n2 = 0;
+    int op = 0;
+    EditText edittext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        edittext= (EditText) findViewById(R.id.edittext);
     }
-    public void sum(View view){
-        EditText n1 = (EditText) findViewById(R.id.n1);
-        int N1num = Integer.parseInt(n1.getText().toString());
-        EditText n2 = (EditText) findViewById(R.id.n2);
-        int N2num = Integer.parseInt(n1.getText().toString());
-        Result = N1num + N2num;
-        Toast.makeText(this, "Resultado: " + Result, Toast.LENGTH_LONG).show();
+    public void calc(View view){
+        n1 = Integer.parseInt(edittext.getText().toString());
+        edittext.setText("");
+        op = view.getId();
     }
 
-    public void sub(View view){
-        EditText n1 = (EditText) findViewById(R.id.n1);
-        int N1num = Integer.parseInt(n1.getText().toString());
-        EditText n2 = (EditText) findViewById(R.id.n2);
-        int N2num = Integer.parseInt(n1.getText().toString());
-        Result = N1num - N2num;
-        Toast.makeText(this, "Resultado: " + Result, Toast.LENGTH_LONG).show();
+    public void result(View view){
+        String erro = "";
+        n2 = Integer.parseInt(edittext.getText().toString());
+
+        switch(op){
+            case R.id.sum:
+                Result = n1 + n2;
+                edittext.setText(String.valueOf(Result));
+                break;
+            case R.id.sub:
+                Result = n1 - n2;
+                edittext.setText(String.valueOf(Result));
+                break;
+            case R.id.div:
+                try {
+                    Result = n1 / n2;
+                    edittext.setText(String.valueOf(Result));
+                }catch(Exception e){
+                    erro = "Cannot Divide!";
+                    edittext.setText(erro);
+                }
+                break;
+            case R.id.mult:
+                Result = n1 * n2;
+                edittext.setText(String.valueOf(Result));
+                break;
+        }
+
     }
 
-    public void div(View view){
-        EditText n1 = (EditText) findViewById(R.id.n1);
-        int N1num = Integer.parseInt(n1.getText().toString());
-        EditText n2 = (EditText) findViewById(R.id.n2);
-        int N2num = Integer.parseInt(n1.getText().toString());
-        Result = N1num / N2num;
-        Toast.makeText(this, "Resultado: " + Result, Toast.LENGTH_LONG).show();
-    }
-
-    public void mult(View view){
-        EditText n1 = (EditText) findViewById(R.id.n1);
-        int N1num = Integer.parseInt(n1.getText().toString());
-        EditText n2 = (EditText) findViewById(R.id.n2);
-        int N2num = Integer.parseInt(n1.getText().toString());
-        Result = N1num * N2num;
-        Toast.makeText(this, "Resultado: " + Result, Toast.LENGTH_LONG).show();
+    public void cc(View view){
+        edittext.setText("");
     }
 
 }
