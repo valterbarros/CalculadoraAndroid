@@ -21,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         edittext= (EditText) findViewById(R.id.edittext);
     }
+    
     public void calc(View view){
         n1 = Integer.parseInt(edittext.getText().toString());
         edittext.setText("");
@@ -57,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    public void cc(View view){
+    public void cc(View view) {
         edittext.setText("");
     }
 
