@@ -1,4 +1,1 @@
-# CalculadoraAndroid
-#Testando o merge entre o servidor e working directory.
-#Teste 3 do readme
-#teste 4
+#Calculadora desenvolvida em android de acordo com as instruções do curso udacity juntamente com o evento AdroidJam Maceió.
